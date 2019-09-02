@@ -16,6 +16,7 @@
     "lit-element": "^2.2.1",
     "projext": "^7.1.1",
     "projext-plugin-rollup": "^5.1.0",
+    "rimraf": "^3.0.0",
     "rollup-plugin-svg": "^2.0.0"
   },
   "engine-strict": true,
@@ -24,7 +25,9 @@
   },
   "scripts": {
     "lint": "./utils/scripts/lint",
-    "lint:all": "./utils/scripts/lint-all"
+    "lint:all": "./utils/scripts/lint-all",
+    "start": "projext run",
+    "build": "rimraf ./dist && projext build --type production"
   },
   "husky": {
     "hooks": {
