@@ -25,5 +25,11 @@
   "scripts": {
     "lint": "./utils/scripts/lint",
     "lint:all": "./utils/scripts/lint-all"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "./utils/hooks/pre-commit",
+      "post-merge": "./utils/hooks/post-merge"
+    }
   }
 }
