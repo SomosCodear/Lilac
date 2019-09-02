@@ -1,0 +1,26 @@
+{
+  "name": "lilac",
+  "description": "Components library",
+  "version": "0.0.1",
+  "repository": "WebConfTech/lilac",
+  "author": "WebConf <hola@webconf.tech>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.2.0",
+    "husky": "^3.0.5",
+    "lit-element": "^2.2.1",
+    "projext": "^7.1.1",
+    "projext-plugin-rollup": "^5.1.0",
+    "rollup-plugin-svg": "^2.0.0"
+  },
+  "engine-strict": true,
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {}
+}
