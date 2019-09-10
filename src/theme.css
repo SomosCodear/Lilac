@@ -1,5 +1,18 @@
+@font-face {
+  font-family: 'Bahnschrift';
+  src: url('/assets/fonts/bahnschrift.ttf') format('truetype');
+  font-weight: 1 999;
+  font-display: swap;
+}
+
 html {
+  /* palette */
   --color-primary: #302D63;
   --color-secondary: #A1195B;
   --color-text: #FFFFFF;
+}
+
+html,
+body {
+  font-family: 'Bahnschrift', sans-serif;
 }

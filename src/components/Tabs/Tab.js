@@ -21,6 +21,7 @@ class Tab extends LitElement {
         line-height: 1.875rem;
         width: 3.9075rem;
         text-align: center;
+        font-family: inherit;
         font-size: 1.1875rem;
         padding: 0;
         margin-right: 0.826875rem;

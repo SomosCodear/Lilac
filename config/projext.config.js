@@ -13,6 +13,9 @@ module.exports = {
           decorators: true,
         },
       },
+      copy: [
+        'assets',
+      ],
     },
   },
 };
