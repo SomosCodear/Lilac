@@ -2,4 +2,6 @@ html {
   --color-primary: #302D63;
   --color-secondary: #A1195B;
   --color-text: #FFFFFF;
+  --color-error: #D50000;
+  --color-base: #FFFFFF;
 }
