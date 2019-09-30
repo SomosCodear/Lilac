@@ -1,2 +1,4 @@
 export { Calendar } from './Calendar';
-export { CalendarDay } from './CalendarDay';
+export { MonthSelector } from './MonthSelector';
+export { Day } from './Day';
+export { Event } from './Event';
