@@ -6,3 +6,11 @@ export const breakpoints = {
   mobile: unsafeCSS('45rem'),
   smallScreen: unsafeCSS('80rem'),
 };
+
+export const colors = {
+  primary: '#302D63',
+  primaryLight: '#3C467E',
+  primaryLightest: '#657CBD',
+  secondary: '#A70050',
+  text: '#FFFFFF',
+};

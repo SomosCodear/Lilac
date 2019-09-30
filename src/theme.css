@@ -1,5 +1,12 @@
 html {
   --color-primary: #302D63;
-  --color-secondary: #A1195B;
+  --color-primary-light: #3C467E;
+  --color-primary-lightest: #657CBD;
+  --color-secondary: #A70055;
   --color-text: #FFFFFF;
+}
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
 }

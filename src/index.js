@@ -1,2 +1,3 @@
-export { Tab, TabsContainer } from './components/Tabs';
-export { Calendar, CalendarDay } from './components/Calendar';
+export * from './components/Icons';
+export * from './components/Tabs';
+export * from './components/Calendar';
