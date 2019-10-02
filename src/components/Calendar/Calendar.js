@@ -11,7 +11,7 @@ import { breakpoints } from '../../constants';
 @customElement('lilac-calendar')
 class Calendar extends LitElement {
   @property({ type: String, reflect: true })
-  title = ''
+  name = ''
 
   @property({ type: Array })
   events = []
@@ -24,7 +24,7 @@ class Calendar extends LitElement {
 
   static get styles() {
     return css`
-      .title {
+      .name {
         display: none;
       }
 
@@ -39,8 +39,31 @@ class Calendar extends LitElement {
       }
 
       @media (min-width: ${breakpoints.mobile}) {
-        .title {
+        section {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, 6.25rem);
+          grid-auto-rows: 6.25rem;
+          grid-gap: 0.625rem;
+        }
+
+        header {
+          grid-column-start: 1;
+          grid-column-end: 5;
+        }
+
+        .name {
           display: initial;
+          font-size: 4rem;
+          font-weight: 100;
+          color: var(--color-primary-light);
+        }
+
+        .days {
+          display: contents;
+        }
+
+        lilac-calendar-day {
+          margin: 0;
         }
       }
     `;
@@ -80,10 +103,12 @@ class Calendar extends LitElement {
 
     return html`
       <section>
-        <lilac-calendar-month-selector></lilac-calendar-month-selector>
-        <h2 class="title">
-          ${this.title}
-        </h2>
+        <header>
+          <lilac-calendar-month-selector></lilac-calendar-month-selector>
+          <h2 class="name">
+            ${this.name}
+          </h2>
+        </header>
         <ol class="days">
           ${repeat(days, (day) => day, this.renderDay.bind(this))}
         </ol>

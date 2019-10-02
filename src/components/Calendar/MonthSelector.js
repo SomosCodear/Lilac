@@ -5,7 +5,7 @@ import {
   customElement,
   property,
 } from 'lit-element';
-import { colors } from '../../constants';
+import { colors, breakpoints } from '../../constants';
 
 const MONTH_NAMES = [
   'enero',
@@ -17,6 +17,7 @@ const MONTH_NAMES = [
   'julio',
   'agosto',
   'septiembre',
+  'octubre',
   'noviembre',
   'diciembre',
 ];
@@ -51,6 +52,7 @@ class MonthSelector extends LitElement {
 
       .previous-month,
       .next-month {
+        display: block;
         padding: 0.5rem 1rem;
         border: solid 1px var(--color-primary-lightest);
         border-radius: 0.625rem;
@@ -71,6 +73,23 @@ class MonthSelector extends LitElement {
         font-family: Source Sans Pro;
         font-size: 1.5rem;
         color: var(--color-primary-light);
+      }
+
+      @media (min-width: ${breakpoints.mobile}) {
+        .month-selector {
+          justify-content: flex-start;
+        }
+
+        .previous-month,
+        .next-month {
+          padding: 0;
+          border: 0;
+        }
+
+        .current-month {
+          padding: 0 0.625rem;
+          color: var(--color-primary-lightest);
+        }
       }
     `;
   }

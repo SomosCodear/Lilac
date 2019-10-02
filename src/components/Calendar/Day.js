@@ -38,8 +38,9 @@ class Day extends LitElement {
       }
 
       @media (min-width: ${breakpoints.mobile}) {
-        .empty {
-          display: initial;
+        .empty,
+        .day-number {
+          display: block;
         }
       }
     `;

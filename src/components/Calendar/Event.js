@@ -5,7 +5,7 @@ import {
   customElement,
   property,
 } from 'lit-element';
-import { colors } from '../../constants';
+import { colors, breakpoints } from '../../constants';
 
 const DAY_NAMES = [
   'dom',
@@ -96,6 +96,25 @@ class Event extends LitElement {
         border-left: 0;
         border-radius: 0 0.625rem 0.625rem 0;
         fill: var(--color-secondary);
+      }
+
+      @media (min-width: ${breakpoints.mobile}) {
+        .info {
+          border: 0;
+          padding: 0;
+        }
+
+        .name {
+          text-transform: none;
+          font-size: 0.75rem;
+        }
+
+        .date,
+        .street,
+        .city,
+        .open {
+          display: none;
+        }
       }
     `;
   }
