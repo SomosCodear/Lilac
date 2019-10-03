@@ -6,21 +6,7 @@ import {
   property,
 } from 'lit-element';
 import { colors, breakpoints } from '../../constants';
-
-const MONTH_NAMES = [
-  'enero',
-  'febrero',
-  'marzo',
-  'abril',
-  'mayo',
-  'junio',
-  'julio',
-  'agosto',
-  'septiembre',
-  'octubre',
-  'noviembre',
-  'diciembre',
-];
+import { formatMonth } from '../../utils/date';
 
 @customElement('lilac-calendar-month-selector')
 class MonthSelector extends LitElement {
@@ -29,14 +15,6 @@ class MonthSelector extends LitElement {
 
   @property({ type: Number, reflect: true })
   currentYear = (new Date()).getFullYear()
-
-  formatMonth(month, year) {
-    return `${MONTH_NAMES[month]} ${year}`;
-  }
-
-  currentMonthText() {
-    return this.formatMonth(this.currentMonth, this.currentYear);
-  }
 
   static get styles() {
     return css`
@@ -94,6 +72,10 @@ class MonthSelector extends LitElement {
     `;
   }
 
+  currentMonthText() {
+    return formatMonth(this.currentMonth, this.currentYear);
+  }
+
   previousMonthText() {
     let month;
     let year;
@@ -106,7 +88,7 @@ class MonthSelector extends LitElement {
       year = this.currentYear;
     }
 
-    return this.formatMonth(month, year);
+    return formatMonth(month, year);
   }
 
   nextMonthText() {
@@ -121,7 +103,7 @@ class MonthSelector extends LitElement {
       year = this.currentYear;
     }
 
-    return this.formatMonth(month, year);
+    return formatMonth(month, year);
   }
 
   render() {
@@ -142,7 +124,7 @@ class MonthSelector extends LitElement {
           </li>
           <li
             class="current-month"
-            aria-current="location"
+            aria-hidden="true"
           >
             ${this.currentMonthText()}
           </li>

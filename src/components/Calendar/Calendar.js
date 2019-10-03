@@ -7,6 +7,7 @@ import {
 } from 'lit-element';
 import { repeat } from 'lit-html/directives/repeat';
 import { breakpoints } from '../../constants';
+import { formatMonth } from '../../utils/date';
 
 @customElement('lilac-calendar')
 class Calendar extends LitElement {
@@ -47,6 +48,8 @@ class Calendar extends LitElement {
         }
 
         header {
+          display: flex;
+          flex-direction: column-reverse;
           grid-column-start: 1;
           grid-column-end: 5;
         }
@@ -56,6 +59,7 @@ class Calendar extends LitElement {
           font-size: 4rem;
           font-weight: 100;
           color: var(--color-primary-light);
+          margin: 0;
         }
 
         .days {
@@ -93,7 +97,6 @@ class Calendar extends LitElement {
       <lilac-calendar-day
         day=${currentDay}
         .events=${events}
-        aria-hidden=${events.length === 0}
       />
     `;
   }
@@ -104,10 +107,15 @@ class Calendar extends LitElement {
     return html`
       <section>
         <header>
-          <lilac-calendar-month-selector></lilac-calendar-month-selector>
           <h2 class="name">
             ${this.name}
           </h2>
+          <lilac-calendar-month-selector></lilac-calendar-month-selector>
+          <lilac-sr-only-text>
+            <h3>
+              Eventos para ${formatMonth(this.currentMonth, this.currentYear)}
+            </h3>
+          </lilac-sr-only-text>
         </header>
         <ol class="days">
           ${repeat(days, (day) => day, this.renderDay.bind(this))}

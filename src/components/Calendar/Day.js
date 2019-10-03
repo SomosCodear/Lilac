@@ -50,8 +50,16 @@ class Day extends LitElement {
     return html`
       <li
         class=${classMap({ day: true, empty: this.events.length === 0 })}
+        aria-hidden="${this.events.length === 0}"
       >
-        <label class="day-number">${this.day}</label>
+        <span
+          class="day-number"
+        >
+          <lilac-sr-only-text>
+            Eventos para el
+          </lilac-sr-only-text>
+          ${this.day}
+        </span>
         <ul class="events">
           ${repeat(this.events, ({ name, date }) => `${name} ${date}`, (event) => html`
             <lilac-calendar-event
