@@ -41,10 +41,6 @@ class Calendar extends LitElement {
         margin: 0.25rem 0 0;
       }
 
-      lilac-calendar-day {
-        margin-top: 1rem;
-      }
-
       @media (min-width: ${breakpoints.mobile}) {
         section {
           display: grid;
@@ -70,10 +66,6 @@ class Calendar extends LitElement {
 
         .days {
           display: contents;
-        }
-
-        lilac-calendar-day {
-          margin: 0;
         }
       }
     `;

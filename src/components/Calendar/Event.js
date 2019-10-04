@@ -18,6 +18,16 @@ const DAY_NAMES = [
   'sáb',
 ];
 
+const SR_DAY_NAMES = [
+  'domingo',
+  'lunes',
+  'martes',
+  'miercoles',
+  'jueves',
+  'viernes',
+  'sábado',
+];
+
 @customElement('lilac-calendar-event')
 class Event extends LitElement {
   @property({ type: String, reflect: true })
@@ -43,6 +53,7 @@ class Event extends LitElement {
       .event {
         display: flex;
         flex-direction: row;
+        margin-top: 1rem;
       }
 
       .date {
@@ -105,6 +116,7 @@ class Event extends LitElement {
       @media (min-width: ${breakpoints.mobile}) {
         .event {
           display: list-item;
+          margin-top: 0;
         }
 
         .event::marker {
@@ -140,12 +152,20 @@ class Event extends LitElement {
       <li class="event">
         <div class="date">
           <div>
-            ${DAY_NAMES[date.getDay()]}
+            <span aria-hidden="true">
+              ${DAY_NAMES[date.getDay()]}
+            </span>
+            <lilac-sr-only-text>
+              ${SR_DAY_NAMES[date.getDay()]}
+            </lilac-sr-only-text>
           </div>
           <div class="day">
             ${formatNumber(date.getDate())}
           </div>
           <div>
+            <lilac-sr-only-text>
+              a las
+            </lilac-sr-only-text>
             ${formatNumber(date.getHours())}:${formatNumber(date.getMinutes())}
           </div>
         </div>
@@ -157,9 +177,15 @@ class Event extends LitElement {
             ${this.name}
           </span>
           <div class="street">
+            <lilac-sr-only-text>
+              Dirección:
+            </lilac-sr-only-text>
             ${this.street}
           </div>
           <div class="city">
+            <lilac-sr-only-text>
+              Ciudad:
+            </lilac-sr-only-text>
             ${this.city}, ${this.country}
           </div>
         </div>
@@ -167,6 +193,7 @@ class Event extends LitElement {
           class="open"
           href=${this.link}
           target="_blank"
+          aria-label="Abrir página del evento"
         >
           <lilac-icon-chevron direction="right" color=${colors.secondary} width=16 height=40>
           </lilac-icon-chevron>
