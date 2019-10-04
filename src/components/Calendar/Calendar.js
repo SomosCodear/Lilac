@@ -7,7 +7,7 @@ import {
 } from 'lit-element';
 import { repeat } from 'lit-html/directives/repeat';
 import { breakpoints } from '../../constants';
-import { formatMonth } from '../../utils/date';
+import { formatMonth } from '../../utils/format';
 
 @customElement('lilac-calendar')
 class Calendar extends LitElement {
@@ -22,6 +22,12 @@ class Calendar extends LitElement {
 
   @property({ type: Number, reflect: true })
   currentYear = (new Date()).getFullYear()
+
+  constructor() {
+    super();
+
+    this.today = new Date();
+  }
 
   static get styles() {
     return css`
@@ -95,8 +101,9 @@ class Calendar extends LitElement {
 
     return html`
       <lilac-calendar-day
-        day=${currentDay}
-        .events=${events}
+        day="${currentDay}"
+        .events="${events}"
+        ?istoday="${this.currentMonth === this.today.getMonth() && this.today.getDate() === currentDay}"
       />
     `;
   }
@@ -110,7 +117,11 @@ class Calendar extends LitElement {
           <h2 class="name">
             ${this.name}
           </h2>
-          <lilac-calendar-month-selector></lilac-calendar-month-selector>
+          <lilac-calendar-month-selector
+            current-month={this.currentMonth}
+            current-year={this.currentYear}
+          >
+          </lilac-calendar-month-selector>
           <lilac-sr-only-text>
             <h3>
               Eventos para ${formatMonth(this.currentMonth, this.currentYear)}

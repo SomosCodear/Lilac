@@ -6,7 +6,7 @@ import {
   property,
 } from 'lit-element';
 import { colors, breakpoints } from '../../constants';
-import { formatMonth } from '../../utils/date';
+import { formatMonth } from '../../utils/format';
 
 @customElement('lilac-calendar-month-selector')
 class MonthSelector extends LitElement {
@@ -32,7 +32,7 @@ class MonthSelector extends LitElement {
       .next-month {
         display: block;
         padding: 0.5rem 1rem;
-        border: solid 1px var(--color-primary-lightest);
+        border: solid 0.0625rem var(--color-primary-lightest);
         border-radius: 0.625rem;
         background-color: transparent;
         cursor: pointer;

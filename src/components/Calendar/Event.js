@@ -6,6 +6,7 @@ import {
   property,
 } from 'lit-element';
 import { colors, breakpoints } from '../../constants';
+import { formatNumber } from '../../utils/format';
 
 const DAY_NAMES = [
   'dom',
@@ -66,19 +67,22 @@ class Event extends LitElement {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        min-width: 0;
         padding: 0.625rem 1.25rem;
-        border: solid 1px var(--color-secondary);
+        border: solid 0.0625rem var(--color-secondary);
         border-right: 0;
       }
 
       .name {
         flex-grow: 1;
+        overflow: hidden;
         font-family: Source Sans Pro;
         font-size: 1.5rem;
-        line-height: 1.5rem;
         font-weight: 700;
         text-transform: uppercase;
         color: var(--color-primary-light);
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       .street,
@@ -92,13 +96,21 @@ class Event extends LitElement {
         flex-direction: column;
         justify-content: center;
         padding: 1.25rem;
-        border: solid 1px var(--color-secondary);
+        border: solid 0.0625rem var(--color-secondary);
         border-left: 0;
         border-radius: 0 0.625rem 0.625rem 0;
         fill: var(--color-secondary);
       }
 
       @media (min-width: ${breakpoints.mobile}) {
+        .event {
+          display: list-item;
+        }
+
+        .event::marker {
+          font-size: 0.9rem;
+        }
+
         .info {
           border: 0;
           padding: 0;
@@ -106,7 +118,9 @@ class Event extends LitElement {
 
         .name {
           text-transform: none;
-          font-size: 0.75rem;
+          font-weight: 400;
+          font-size: inherit;
+          color: inherit;
         }
 
         .date,
@@ -119,34 +133,33 @@ class Event extends LitElement {
     `;
   }
 
-  formatNumber(value) {
-    return value.toLocaleString('es-AR', { minimumIntegerDigits: 2 });
-  }
-
   render() {
     const date = new Date(this.date);
 
     return html`
-      <li class="event" aria-label="Evento">
-        <div class="date" aria-label="Fecha">
-          <div aria-label="Día de la semana">
+      <li class="event">
+        <div class="date">
+          <div>
             ${DAY_NAMES[date.getDay()]}
           </div>
-          <div class="day" aria-label="Día del més">
-            ${this.formatNumber(date.getDate())}
+          <div class="day">
+            ${formatNumber(date.getDate())}
           </div>
-          <div aria-label="Hora del día">
-            ${this.formatNumber(date.getHours())}:${this.formatNumber(date.getMinutes())}
+          <div>
+            ${formatNumber(date.getHours())}:${formatNumber(date.getMinutes())}
           </div>
         </div>
-        <div class="info" aria-label="Información">
-          <label class="name" arial-label="Nombre">
+        <div class="info">
+          <span
+            class="name"
+            title="${this.name}"
+          >
             ${this.name}
-          </label>
-          <div class="street" aria-label="Dirección">
+          </span>
+          <div class="street">
             ${this.street}
           </div>
-          <div class="city" aria-label="Ciudad y país">
+          <div class="city">
             ${this.city}, ${this.country}
           </div>
         </div>
@@ -154,7 +167,6 @@ class Event extends LitElement {
           class="open"
           href=${this.link}
           target="_blank"
-          aria-label="Link del evento"
         >
           <lilac-icon-chevron direction="right" color=${colors.secondary} width=16 height=40>
           </lilac-icon-chevron>
