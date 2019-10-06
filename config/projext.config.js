@@ -7,12 +7,6 @@ module.exports = {
           js: '[target-name].js',
         },
       },
-      babel: {
-        features: {
-          classProperties: true,
-          decorators: true,
-        },
-      },
     },
   },
 };
