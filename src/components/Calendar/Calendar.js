@@ -36,7 +36,6 @@ class Calendar extends LitElement {
       }
 
       .days {
-        list-style: none;
         padding: 0;
         margin: 0.25rem 0 0;
       }
@@ -120,9 +119,9 @@ class Calendar extends LitElement {
             </h3>
           </lilac-sr-only-text>
         </header>
-        <ol class="days">
+        <div class="days">
           ${repeat(days, (day) => day, this.renderDay.bind(this))}
-        </ol>
+        </div>
       </section>
     `;
   }

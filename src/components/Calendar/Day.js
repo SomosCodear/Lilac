@@ -39,12 +39,6 @@ class Day extends LitElement {
         display: none;
       }
 
-      .events {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
       @media (min-width: ${breakpoints.mobile}) {
         :host {
           display: flex;
@@ -100,6 +94,15 @@ class Day extends LitElement {
           color: var(--color-text);
         }
 
+        lilac-calendar-event {
+          display: list-item;
+          list-style: disc;
+        }
+
+        lilac-calendar-event::marker {
+          font-size: 0.9rem;
+        }
+
         .day:hover .day-number {
           font-weight: 700;
         }
@@ -118,7 +121,7 @@ class Day extends LitElement {
 
   render() {
     return html`
-      <li
+      <div
         class=${classMap({ day: true, today: this.isToday, empty: this.events.length === 0 })}
         aria-hidden="${this.events.length === 0}"
       >
@@ -132,9 +135,10 @@ class Day extends LitElement {
           </lilac-sr-only-text>
           <lilac-icon-bullet></lilac-icon-bullet>
         </div>
-        <ul class="events">
+        <div class="events" role="list">
           ${repeat(this.events, ({ name, date }) => `${name} ${date}`, (event) => html`
             <lilac-calendar-event
+              role="listitem"
               date=${event.date}
               name=${event.name}
               street=${event.street}
@@ -144,8 +148,8 @@ class Day extends LitElement {
             >
             </lilac-calendar-event>
           `)}
-        </ul>
-      </li>
+        </div>
+      </div>
     `;
   }
 }

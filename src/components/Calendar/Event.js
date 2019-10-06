@@ -115,12 +115,7 @@ class Event extends LitElement {
 
       @media (min-width: ${breakpoints.mobile}) {
         .event {
-          display: list-item;
           margin-top: 0;
-        }
-
-        .event::marker {
-          font-size: 0.9rem;
         }
 
         .info {
@@ -149,7 +144,7 @@ class Event extends LitElement {
     const date = new Date(this.date);
 
     return html`
-      <li class="event">
+      <div class="event">
         <div class="date">
           <div>
             <span aria-hidden="true">
@@ -198,7 +193,7 @@ class Event extends LitElement {
           <lilac-icon-chevron direction="right" color=${colors.secondary} width=16 height=40>
           </lilac-icon-chevron>
         </a>
-      </li>
+      </div>
     `;
   }
 }
