@@ -8,6 +8,9 @@ import {
 import { colors, breakpoints } from '../../constants';
 import { formatMonth } from '../../utils/format';
 
+export const PREVIOUS_MONTH_EVENT = 'previous-month-event';
+export const NEXT_MONTH_EVENT = 'next-month-event';
+
 @customElement('lilac-calendar-month-selector')
 class MonthSelector extends LitElement {
   @property({ type: Number, reflect: true })
@@ -106,6 +109,16 @@ class MonthSelector extends LitElement {
     return formatMonth(month, year);
   }
 
+  firePreviousMonthEvent() {
+    const event = new CustomEvent(PREVIOUS_MONTH_EVENT);
+    this.dispatchEvent(event);
+  }
+
+  fireNextMonthEvent() {
+    const event = new CustomEvent(NEXT_MONTH_EVENT);
+    this.dispatchEvent(event);
+  }
+
   render() {
     return html`
       <nav aria-label="Eventos por més">
@@ -114,6 +127,7 @@ class MonthSelector extends LitElement {
             <button
               class="previous-month"
               aria-label=${`Ver eventos para ${this.previousMonthText()}`}
+              @click="${this.firePreviousMonthEvent}"
             >
               <lilac-icon-chevron
                 color=${colors.primaryLightest}
@@ -132,6 +146,7 @@ class MonthSelector extends LitElement {
             <button
               class="next-month"
               aria-label=${`Ver eventos para ${this.nextMonthText()}`}
+              @click="${this.fireNextMonthEvent}"
             />
               <lilac-icon-chevron
                 direction="right"

@@ -87,6 +87,24 @@ class Calendar extends LitElement {
     });
   }
 
+  handlePreviousMonthEvent() {
+    this.currentMonth -= 1;
+
+    if (this.currentMonth < 0) {
+      this.currentMonth = 11;
+      this.currentYear -= 1;
+    }
+  }
+
+  handleNextMonthEvent() {
+    this.currentMonth += 1;
+
+    if (this.currentMonth > 11) {
+      this.currentMonth = 0;
+      this.currentYear += 1;
+    }
+  }
+
   renderDay(currentDay) {
     const events = this.getEventsForDay(currentDay);
 
@@ -109,8 +127,10 @@ class Calendar extends LitElement {
             ${this.name}
           </h2>
           <lilac-calendar-month-selector
-            current-month={this.currentMonth}
-            current-year={this.currentYear}
+            currentmonth="${this.currentMonth}"
+            currentyear="${this.currentYear}"
+            @previous-month-event="${this.handlePreviousMonthEvent}"
+            @next-month-event="${this.handleNextMonthEvent}"
           >
           </lilac-calendar-month-selector>
           <lilac-sr-only-text>
