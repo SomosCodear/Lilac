@@ -5,6 +5,7 @@ import {
   customElement,
   property,
 } from 'lit-element';
+import { breakpoints } from '../../constants';
 
 export const TAB_SELECTED_EVENT_NAME = 'tab-selected';
 
@@ -34,6 +35,15 @@ class Tab extends LitElement {
       :host([active]) button {
         font-weight: bold;
         opacity: 1;
+      }
+
+      @media (max-width: ${breakpoints.mobile}) {
+        button {
+          border-radius: 0.1875rem 0.1875rem 0.1875rem 0.8125rem;
+          line-height: 2.1875rem;
+          width: 1.875rem;
+          margin-right: 0.375rem;
+        }
       }
     `;
   }
