@@ -17,7 +17,10 @@
     "projext": "^7.1.1",
     "projext-plugin-rollup": "^5.1.0",
     "rimraf": "^3.0.0",
-    "rollup-plugin-svg": "^2.0.0"
+    "rollup-plugin-svg": "^2.0.0",
+    "typescript": "^3.6.2",
+    "typescript-lit-html-plugin": "^0.9.0",
+    "typescript-styled-plugin": "^0.14.0"
   },
   "engine-strict": true,
   "engines": {

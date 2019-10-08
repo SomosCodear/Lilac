@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "plugins": [
+      {
+        "name": "typescript-lit-html-plugin"
+      },
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ]
+  }
+}
