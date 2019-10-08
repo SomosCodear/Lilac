@@ -18,9 +18,16 @@
     "projext-plugin-rollup": "^5.1.0",
     "rimraf": "^3.0.0",
     "rollup-plugin-svg": "^2.0.0",
+    "typeface-roboto": "^0.0.75",
+    "typeface-source-sans-pro": "^0.0.75",
     "typescript": "^3.6.2",
     "typescript-lit-html-plugin": "^0.9.0",
     "typescript-styled-plugin": "^0.14.0"
+  },
+  "peerDependencies": {
+    "lit-element": "^2.2.1",
+    "typeface-roboto": "^0.0.75",
+    "typeface-source-sans-pro": "^0.0.75"
   },
   "engine-strict": true,
   "engines": {

@@ -1,5 +1,7 @@
 import './index';
 import './theme.css';
+import 'typeface-roboto';
+import 'typeface-source-sans-pro';
 
 window.addEventListener('load', () => {
   const tabs = Array.from(document.getElementsByTagName('tabs-tab'));
