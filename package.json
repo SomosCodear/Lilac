@@ -1,7 +1,8 @@
 {
-  "name": "lilac",
+  "name": "@codear/lilac",
   "description": "Components library",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "files": ["dist"],
   "repository": "WebConfTech/lilac",
   "author": "WebConf <hola@webconf.tech>",
   "license": "MIT",
