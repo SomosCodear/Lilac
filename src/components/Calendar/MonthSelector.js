@@ -68,7 +68,8 @@ class MonthSelector extends LitElement {
         }
 
         .current-month {
-          padding: 0 0.625rem;
+          min-width: 12rem;
+          text-align: center;
           color: var(--color-primary-lightest);
         }
       }

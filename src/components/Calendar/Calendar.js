@@ -31,6 +31,10 @@ class Calendar extends LitElement {
 
   static get styles() {
     return css`
+      section {
+        max-width: 47.5rem;
+      }
+
       .name {
         display: none;
       }
