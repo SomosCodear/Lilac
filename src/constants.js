@@ -8,9 +8,19 @@ export const breakpoints = {
 };
 
 export const colors = {
-  primary: '#302D63',
+  colorPrimary: '#302D63',
   primaryLight: '#3C467E',
+  primaryLighter: '#5565AF',
   primaryLightest: '#657CBD',
-  secondary: '#A70050',
+  secondary: '#A70055',
+  secondaryLight: '#C05774',
+  secondaryLighter: '#E0B8C5',
+  secondaryLightest: '#EDCFD1',
+  accent: '#EC008C',
+  accentLight: '#F49AC1',
+  gray: '#636466',
+  grayLight: '#939598',
+  grayLighter: '#C7C8CA',
   text: '#FFFFFF',
+  black: '#000000',
 };
