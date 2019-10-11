@@ -39,6 +39,10 @@ class Day extends LitElement {
         display: none;
       }
 
+      lilac-icon-plus {
+        display: none;
+      }
+
       @media (min-width: ${breakpoints.mobile}) {
         :host {
           display: flex;
@@ -68,6 +72,14 @@ class Day extends LitElement {
 
         lilac-icon-bullet {
           margin-left: 0.375rem;
+        }
+
+        lilac-icon-plus {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          stroke: var(--color-gray);
         }
 
         .events {
@@ -119,6 +131,12 @@ class Day extends LitElement {
     `;
   }
 
+  renderPlus() {
+    return this.events.length > 3
+      ? html`<lilac-icon-plus height="16" width="16"></lilac-icon-plus>`
+      : null;
+  }
+
   render() {
     return html`
       <div
@@ -134,6 +152,7 @@ class Day extends LitElement {
             Hay ${this.events.length} ${inflect(this.events.length, 'evento', 'eventos')} para este día
           </lilac-sr-only-text>
           <lilac-icon-bullet></lilac-icon-bullet>
+          ${this.renderPlus()}
         </div>
         <div class="events" role="list">
           ${repeat(this.events, ({ name, date }) => `${name} ${date}`, (event) => html`
