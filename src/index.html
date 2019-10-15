@@ -67,6 +67,24 @@
           "link": "https://google.com"
         }
       ]'
-    />
+    ></lilac-calendar>
+    <div style="width: 500px; height: 500px; position: relative; background-color: #f7f7f7">
+      this is some test content behind the overlay
+      <br/>
+      <br/>
+      should be blurred!
+      <lilac-overlay open>
+        <lilac-overlay-title>
+          Overlay title
+        </lilac-overlay-title>
+        <lilac-overlay-body>
+          Overlay body with some content
+        </lilac-overlay-body>
+        <lilac-overlay-actions>
+          <lilac-button>Test 1</lilac-button>
+          <lilac-button secundario>Test 2</lilac-button>
+        </lilac-overlay-actions>
+      </lilac-overlay>
+    </div>
   </body>
 </html>
