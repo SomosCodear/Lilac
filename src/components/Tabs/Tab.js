@@ -9,7 +9,7 @@ import { breakpoints } from '../../constants';
 
 export const TAB_SELECTED_EVENT_NAME = 'tab-selected';
 
-@customElement('tabs-tab')
+@customElement('lilac-tab')
 class Tab extends LitElement {
   @property({ type: Boolean, reflect: true })
   active = false

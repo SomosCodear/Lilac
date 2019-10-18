@@ -1,0 +1,1 @@
+export { SROnlyText } from './SROnlyText';

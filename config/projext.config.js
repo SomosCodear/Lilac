@@ -5,12 +5,7 @@ module.exports = {
       output: {
         default: {
           js: '[target-name].js',
-        },
-      },
-      babel: {
-        features: {
-          classProperties: true,
-          decorators: true,
+          css: '[target-name].css',
         },
       },
     },
