@@ -5,7 +5,7 @@ import {
   customElement,
 } from 'lit-element';
 
-@customElement('tabs-container')
+@customElement('lilac-tabs')
 class TabsContainer extends LitElement {
   static get styles() {
     return css`
