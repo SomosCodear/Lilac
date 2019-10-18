@@ -15,6 +15,7 @@ class OverlayTitle extends LitElement {
         font-weight: 700;
         font-size: 1.5rem;
         color: var(--color-primary-light);
+        text-align: center;
       }
     `;
   }

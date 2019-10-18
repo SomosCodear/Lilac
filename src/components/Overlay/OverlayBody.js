@@ -13,6 +13,7 @@ class OverlayBody extends LitElement {
         margin: 0 0 1.875rem;
         font-family: Source Sans Pro;
         color: var(--color-primary);
+        text-align: center;
       }
     `;
   }
