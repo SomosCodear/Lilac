@@ -32,7 +32,13 @@ class Calendar extends LitElement {
   static get styles() {
     return css`
       section {
+        position: relative;
         max-width: 47.5rem;
+        padding: 1rem;
+      }
+
+      header {
+        z-index: 1;
       }
 
       .name {
@@ -40,8 +46,10 @@ class Calendar extends LitElement {
       }
 
       .days {
+        position: relative;
         padding: 0;
         margin: 0.25rem 0 0;
+        min-height: 27rem;
       }
 
       @media (min-width: ${breakpoints.mobile}) {
@@ -69,6 +77,7 @@ class Calendar extends LitElement {
 
         .days {
           display: contents;
+          min-height: unset;
         }
       }
     `;
@@ -80,6 +89,14 @@ class Calendar extends LitElement {
     const lastDay = new Date(this.currentYear, this.currentMonth + 1, 0);
 
     return lastDay.getDate();
+  }
+
+  hasEventsForMonth() {
+    return this.events.find(({ date }) => {
+      const eventDate = new Date(date);
+      return eventDate.getFullYear() === this.currentYear
+        && eventDate.getMonth() === this.currentMonth;
+    }) != null;
   }
 
   getEventsForDay(day) {
@@ -121,6 +138,16 @@ class Calendar extends LitElement {
     `;
   }
 
+  renderNoEventsOverlay() {
+    return html`
+      <lilac-overlay size="big" open>
+        <lilac-overlay-title>
+          No tenemos eventos agendados para este mes
+        </lilac-overlay-title>
+      </lilac-overlay>
+    `;
+  }
+
   render() {
     const days = Array.from(Array(this.getDaysInMonth()), (_, index) => index + 1);
 
@@ -145,6 +172,7 @@ class Calendar extends LitElement {
         </header>
         <div class="days">
           ${repeat(days, (day) => day, this.renderDay.bind(this))}
+          ${!this.hasEventsForMonth() ? this.renderNoEventsOverlay() : null}
         </div>
       </section>
     `;
