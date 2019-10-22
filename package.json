@@ -27,7 +27,6 @@
     "typescript-styled-plugin": "^0.14.0"
   },
   "peerDependencies": {
-    "lit-element": "^2.2.1",
     "typeface-roboto": "^0.0.75",
     "typeface-source-sans-pro": "^0.0.75"
   },
