@@ -7,20 +7,22 @@ export const breakpoints = {
   smallScreen: unsafeCSS('80rem'),
 };
 
+/* eslint-disable no-multi-spaces */
 export const colors = {
-  colorPrimary: '#302D63',
-  primaryLight: '#3C467E',
-  primaryLighter: '#5565AF',
-  primaryLightest: '#657CBD',
-  secondary: '#A70055',
-  secondaryLight: '#C05774',
-  secondaryLighter: '#E0B8C5',
-  secondaryLightest: '#EDCFD1',
-  accent: '#EC008C',
-  accentLight: '#F49AC1',
-  gray: '#636466',
-  grayLight: '#939598',
-  grayLighter: '#C7C8CA',
-  text: '#FFFFFF',
-  black: '#000000',
+  colorPrimary: '#302D63',        // Jakarta
+  primaryLight: '#3C467E',        // East Bay
+  primaryLighter: '#5565AF',      // Blue Violet
+  primaryLightest: '#657CBD',     // Ship Cove
+  secondary: '#A70055',           // Disco
+  secondaryLight: '#C05774',      // Blush
+  secondaryLighter: '#E0B8C5',    // Blossom
+  secondaryLightest: '#EDCFD1',   // Vanilla Ice
+  accent: '#EC008C',              // Hollywood Cerise
+  accentLight: '#F49AC1',         // Illusion
+  gray: '#636466',                // Shuttle Gray
+  grayLight: '#939598',           // Oslo Gray
+  grayLighter: '#C7C8CA',         // Silver Sand
+  text: '#FFFFFF',                // White
+  black: '#000000',               // Black
 };
+/* eslint-enable no-multi-spaces */

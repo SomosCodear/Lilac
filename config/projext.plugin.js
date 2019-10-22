@@ -31,11 +31,9 @@ module.exports = (app) => {
      * needed for the demo app.
      */
     const { target, buildType } = params;
+
     if (buildType === 'production') {
-      target.excludeModules.push('lit-element');
       target.babel.polyfill = false;
-    } else {
-      target.includeModules.push('lit-element');
     }
 
     return {
