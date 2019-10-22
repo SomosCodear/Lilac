@@ -1,19 +1,19 @@
 html {
-  --color-primary: #302D63;
-  --color-primary-light: #3C467E;
-  --color-primary-lighter: #5565AF;
-  --color-primary-lightest: #657CBD;
-  --color-secondary: #A70055;
-  --color-secondary-light: #C05774;
-  --color-secondary-lighter: #E0B8C5;
-  --color-secondary-lightest: #EDCFD1;
-  --color-accent: #EC008C;
-  --color-accent-light: #F49AC1;
-  --color-gray: #636466;
-  --color-gray-light: #939598;
-  --color-gray-lighter: #C7C8CA;
-  --color-text: #FFFFFF;
-  --color-black: #000000;
+  --color-primary: #302D63;                 /* Jakarta          */
+  --color-primary-light: #3C467E;           /* East Bay         */
+  --color-primary-lighter: #5565AF;         /* Blue Violet      */
+  --color-primary-lightest: #657CBD;        /* Ship Cove        */
+  --color-secondary: #A70055;               /* Disco            */
+  --color-secondary-light: #C05774;         /* Blush            */
+  --color-secondary-lighter: #E0B8C5;       /* Blossom          */
+  --color-secondary-lightest: #EDCFD1;      /* Vanilla Ice      */
+  --color-accent: #EC008C;                  /* Hollywood Cerise */
+  --color-accent-light: #F49AC1;            /* Illusion         */
+  --color-gray: #636466;                    /* Shuttle Gray     */
+  --color-gray-light: #939598;              /* Oslo Gray        */
+  --color-gray-lighter: #C7C8CA;            /* Silver Sand      */
+  --color-text: #FFFFFF;                    /* White            */
+  --color-black: #000000;                   /* Black            */
 }
 
 html,
