@@ -1,7 +1,7 @@
 {
   "name": "@codear/lilac",
   "description": "Components library",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "files": ["dist"],
   "main": "dist/lilac.js",
   "repository": "WebConfTech/lilac",
@@ -27,7 +27,6 @@
     "typescript-styled-plugin": "^0.14.0"
   },
   "peerDependencies": {
-    "lit-element": "^2.2.1",
     "typeface-roboto": "^0.0.75",
     "typeface-source-sans-pro": "^0.0.75"
   },
