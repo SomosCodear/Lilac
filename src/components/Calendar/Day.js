@@ -108,7 +108,6 @@ class Day extends LitElement {
 
         lilac-calendar-event {
           display: list-item;
-          list-style: disc;
         }
 
         lilac-calendar-event::marker {
