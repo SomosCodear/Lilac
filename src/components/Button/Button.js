@@ -16,7 +16,7 @@ class Button extends LitElement {
   href = ''
 
   @property({ type: String, reflect: true })
-  alt = ''
+  title = ''
 
   @property({ type: String, reflect: true })
   target = ''
@@ -105,7 +105,7 @@ class Button extends LitElement {
     return html`
       <a
         href=${this.href}
-        alt=${this.alt}
+        title=${this.title}
         target=${this.target}
         class=${classMap({ secundario: this.secundario })}
       >
