@@ -6,6 +6,7 @@ import {
   property,
 } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map';
+import { breakpoints } from '../../constants';
 
 @customElement('lilac-button')
 class Button extends LitElement {
@@ -88,10 +89,13 @@ class Button extends LitElement {
         box-shadow: 0 0.1875rem 0.1875rem #00000059;
       }
 
-      button.big,
-      a.big {
-        font-size: 2.75rem;
-        padding: 2rem;
+      @media (min-width: ${breakpoints.mobile}) {
+        button.big,
+        a.big {
+            font-size: 2.75rem;
+            padding: 2rem;
+          }
+        }
       }
 
       button.inverted,
