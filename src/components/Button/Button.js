@@ -10,7 +10,16 @@ import { classMap } from 'lit-html/directives/class-map';
 @customElement('lilac-button')
 class Button extends LitElement {
   @property({ type: Boolean, reflect: true })
-  secundario = false
+  secondary = false
+
+  @property({ type: Boolean, reflect: true })
+  shadow = false
+
+  @property({ type: Boolean, reflect: true })
+  big = false
+
+  @property({ type: Boolean, reflect: true })
+  inverted = false
 
   @property({ type: String, reflect: true })
   href = ''
@@ -25,14 +34,24 @@ class Button extends LitElement {
     return css`
       button,
       a {
+        --main-color: var(--color-primary);
+      }
+
+      button.secondary,
+      a.secondary {
+        --main-color: var(--color-secondary);
+      }
+
+      button,
+      a {
         display: block;
         position: relative;
         box-sizing: border-box;
         width: 100%;
-        border: solid 0.125rem var(--color-secondary);
+        border: solid 0.125rem var(--main-color);
         border-radius: 0.625rem;
         padding: 0.75rem;
-        background-color: var(--color-secondary);
+        background-color: var(--main-color);
         text-transform: uppercase;
         color: var(--color-text);
         font-family: Source Sans Pro;
@@ -64,38 +83,58 @@ class Button extends LitElement {
         border-radius: 0.625rem;
       }
 
-      button.secundario,
-      a.secundario {
-        background-color: var(--color-text);
-        color: var(--color-secondary);
+      button.shadow,
+      a.shadow {
+        box-shadow: 0 0.1875rem 0.1875rem #00000059;
       }
 
-      button.secundario:disabled,
-      a.secundario:disabled {
+      button.big,
+      a.big {
+        font-size: 2.75rem;
+        padding: 2rem;
+      }
+
+      button.inverted,
+      a.inverted {
+        background-color: var(--color-text);
+        color: var(--main-color);
+      }
+
+      button.inverted:disabled,
+      a.inverted:disabled {
         cursor: not-not-allowed;
         border-color: var(--color-gray-light);
         color: var(--color-gray-light);
       }
 
-      button.secundario:focus:not(:hover),
-      a.secundario:focus:not(:hover) {
+      button.inverted:focus:not(:hover),
+      a.inverted:focus:not(:hover) {
         border-bottom-width: 0.625rem;
         padding-bottom: 0.25rem;
       }
 
-      button.secundario:hover,
-      button.secundario:active,
-      a.secundario:hover,
-      a.secundario:active {
-        background-color: var(--color-secondary);
+      button.inverted:hover,
+      button.inverted:active,
+      a.inverted:hover,
+      a.inverted:active {
+        background-color: var(--main-color);
         color: var(--color-text);
       }
     `;
   }
 
+  buttonClasses() {
+    return classMap({
+      secondary: this.secondary,
+      shadow: this.shadow,
+      big: this.big,
+      inverted: this.inverted,
+    });
+  }
+
   renderButton() {
     return html`
-      <button class=${classMap({ secundario: this.secundario })}>
+      <button class=${this.buttonClasses()}>
         <slot></slot>
       </button>
     `;
@@ -107,7 +146,7 @@ class Button extends LitElement {
         href=${this.href}
         title=${this.title}
         target=${this.target}
-        class=${classMap({ secundario: this.secundario })}
+        class=${this.buttonClasses()}
       >
         <slot></slot>
       </a>
