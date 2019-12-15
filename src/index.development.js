@@ -1,4 +1,5 @@
 import './index';
+import './index.css';
 import 'typeface-roboto';
 import 'typeface-source-sans-pro';
 

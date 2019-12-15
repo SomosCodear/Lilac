@@ -1,0 +1,16 @@
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.buttons {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.buttons * + * {
+  margin-left: 1rem;
+}

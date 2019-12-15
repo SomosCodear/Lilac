@@ -15,10 +15,3 @@ html {
   --color-text: #FFFFFF;                    /* White            */
   --color-black: #000000;                   /* Black            */
 }
-
-html,
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-}
