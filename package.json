@@ -2,7 +2,9 @@
   "name": "@codear/lilac",
   "description": "Components library",
   "version": "1.0.0",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "dist/lilac.js",
   "repository": "WebConfTech/lilac",
   "author": "WebConf <hola@webconf.tech>",
@@ -10,21 +12,21 @@
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.3.0",
+    "eslint": "^6.7.2",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^9.2.0",
-    "husky": "^3.0.5",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^10.0.0",
+    "husky": "^3.1.0",
     "lit-element": "^2.2.1",
-    "projext": "^7.1.1",
-    "projext-plugin-rollup": "^5.1.0",
+    "projext": "^7.2.0",
+    "projext-plugin-rollup": "^5.1.1",
     "rimraf": "^3.0.0",
     "rollup-plugin-svg": "^2.0.0",
     "typeface-roboto": "^0.0.75",
     "typeface-source-sans-pro": "^0.0.75",
-    "typescript": "^3.6.2",
+    "typescript": "^3.7.3",
     "typescript-lit-html-plugin": "^0.9.0",
-    "typescript-styled-plugin": "^0.14.0"
+    "typescript-styled-plugin": "^0.15.0"
   },
   "engine-strict": true,
   "engines": {
