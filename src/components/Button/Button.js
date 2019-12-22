@@ -89,15 +89,6 @@ class Button extends LitElement {
         box-shadow: 0 0.1875rem 0.1875rem #00000059;
       }
 
-      @media (min-width: ${breakpoints.mobile}) {
-        button.big,
-        a.big {
-            font-size: 2.75rem;
-            padding: 2rem;
-          }
-        }
-      }
-
       button.inverted,
       a.inverted {
         background-color: var(--color-text);
@@ -123,6 +114,14 @@ class Button extends LitElement {
       a.inverted:active {
         background-color: var(--main-color);
         color: var(--color-text);
+      }
+
+      @media (min-width: ${breakpoints.mobile}) {
+        button.big,
+        a.big {
+            font-size: 2.75rem;
+            padding: 2rem;
+        }
       }
     `;
   }
