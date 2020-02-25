@@ -7,33 +7,77 @@
     <title>Lilac</title>
   </head>
   <body>
-    <div class="buttons">
-      <lilac-button>
-        Primary Normal
-      </lilac-button>
-      <lilac-button shadow>
-        Primary Shadow
-      </lilac-button>
-      <lilac-button inverted>
-        Primary Inverted
-      </lilac-button>
-      <lilac-button big>
-        Primary Big
-      </lilac-button>
-    </div>
-    <div class="buttons">
-      <lilac-button secondary>
-        Secondary Normal
-      </lilac-button>
-      <lilac-button secondary shadow>
-        Secondary Shadow
-      </lilac-button>
-      <lilac-button secondary inverted>
-        Secondary Inverted
-      </lilac-button>
-      <lilac-button secondary big>
-        Secondary Normal
-      </lilac-button>
-    </div>
+    <section>
+      <h2>Buttons</h2>
+      <div class="buttons">
+        <lilac-button>
+          Primary Normal
+        </lilac-button>
+        <lilac-button shadow>
+          Primary Shadow
+        </lilac-button>
+        <lilac-button inverted>
+          Primary Inverted
+        </lilac-button>
+        <lilac-button big>
+          Primary Big
+        </lilac-button>
+      </div>
+      <div class="buttons">
+        <lilac-button color="secondary">
+          Secondary Normal
+        </lilac-button>
+        <lilac-button color="secondary" shadow>
+          Secondary Shadow
+        </lilac-button>
+        <lilac-button color="secondary" inverted>
+          Secondary Inverted
+        </lilac-button>
+        <lilac-button color="secondary" big>
+          Secondary Normal
+        </lilac-button>
+      </div>
+    </section>
+    <section>
+      <h2>Overlay</h2>
+      <div class="overlay">
+        <lilac-overlay open>
+          <lilac-overlay-title>
+            Medium Overlay
+          </lilac-overlay-title>
+          <lilac-overlay-body>
+            This a test body
+          </lilac-overlay-body>
+          <lilac-overlay-actions>
+            <lilac-button secondary>
+              ¡Sumate!
+            </lilac-button>
+          </lilac-overlay-actions>
+        </lilac-overlay>
+      </div>
+      <div class="overlay">
+        <lilac-overlay size="big" open>
+          <lilac-overlay-title>
+            Big Overlay
+          </lilac-overlay-title>
+          <lilac-overlay-body>
+            This a test body
+          </lilac-overlay-body>
+          <lilac-overlay-actions>
+            <lilac-button>
+              Continuar
+            </lilac-button>
+          </lilac-overlay-actions>
+        </lilac-overlay>
+      </div>
+    </section>
+    <section>
+      <h2>Icons</h2>
+      <div class="icons" />
+        <lilac-icon-chevron></lilac-icon-chevron>
+        <lilac-icon-plus></lilac-icon-plus>
+        <lilac-icon-bullet></lilac-icon-bullet>
+      </div>
+    </section>
   </body>
 </html>

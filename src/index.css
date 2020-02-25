@@ -2,7 +2,7 @@ html,
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 1rem;
 }
 
 .buttons {
@@ -12,5 +12,26 @@ body {
 }
 
 .buttons * + * {
+  margin-left: 1rem;
+}
+
+.overlay {
+  position: relative;
+  display: inline-block;
+  width: 30rem;
+  height: 30rem;
+}
+
+.icons {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  stroke: var(--color-primary);
+  fill: var(--color-primary);
+}
+
+.icons * + * {
   margin-left: 1rem;
 }

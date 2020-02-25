@@ -10,7 +10,7 @@ class OverlayBody extends LitElement {
   static get styles() {
     return css`
       p {
-        margin: 0 0 1.875rem;
+        margin: 1.5rem 0;
         font-family: Source Sans Pro;
         color: var(--color-primary);
         text-align: center;

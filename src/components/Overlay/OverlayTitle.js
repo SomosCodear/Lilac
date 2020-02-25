@@ -10,7 +10,7 @@ class OverlayTitle extends LitElement {
   static get styles() {
     return css`
       h2 {
-        margin: 0 0 1.25rem;
+        margin: 0;
         font-family: Source Sans Pro;
         font-weight: 700;
         font-size: 1.5rem;
