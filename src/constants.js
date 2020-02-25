@@ -7,6 +7,19 @@ export const breakpoints = {
   smallScreen: unsafeCSS('80rem'),
 };
 
+export const mainColorNames = [
+  'primary',
+  'primary-light',
+  'primary-lighter',
+  'primary-lightest',
+  'secondary',
+  'secondary-light',
+  'secondary-lighter',
+  'secondary-lightest',
+  'accent',
+  'accent-light',
+];
+
 /* eslint-disable no-multi-spaces */
 export const colors = {
   colorPrimary: '#302D63',        // Jakarta
