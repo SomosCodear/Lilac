@@ -24,6 +24,12 @@ class Button extends LitElement {
   inverted = false
 
   @property({ type: String, reflect: true })
+  type = 'button'
+
+  @property({ type: Boolean, reflect: true })
+  disabled = false
+
+  @property({ type: String, reflect: true })
   href = ''
 
   @property({ type: String, reflect: true })
@@ -65,6 +71,7 @@ class Button extends LitElement {
         a:disabled {
           cursor: not-allowed;
           background-color: var(--color-gray-light);
+          border-color: var(--color-gray-light);
         }
 
         button:hover:before,
@@ -137,7 +144,11 @@ class Button extends LitElement {
 
   renderButton() {
     return html`
-      <button class=${this.buttonClasses()}>
+      <button
+        type=${this.type}
+        ?disabled=${this.disabled}
+        class=${this.buttonClasses()}
+      >
         <slot></slot>
       </button>
     `;
@@ -149,6 +160,7 @@ class Button extends LitElement {
         href=${this.href}
         title=${this.title}
         target=${this.target}
+        ?disabled=${this.disabled}
         class=${this.buttonClasses()}
       >
         <slot></slot>
